@@ -48,7 +48,7 @@
                                             <select name="usertype" class="form-control">
                                                 <option value="user" selected>User</option>
                                                 <option value="deliver">Deliverer</option>
-                                                {{-- <option value="admin">Admin</option> --}}
+                                                <option value="admin">Provider</option>
                                             </select>
                                             <x-input-error :messages="$errors->get('usertype')" class="mt-2" />
                                         </div>
