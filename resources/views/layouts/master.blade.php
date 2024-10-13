@@ -8,7 +8,7 @@
     <title>GoDeliver | @yield('header')</title>
 
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="images/logo.png" />
 
     <!-- Stylesheet -->
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet" />
@@ -28,8 +28,8 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img src="https://lalodev.com/images/icon.png" width="50">
+            <a href="index.html" class="brand-logo text-center">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:30px; color:black; ">Go</span>&nbsp;&nbsp;&nbsp;<img src="{{asset('images/logo-mini.png')}}" width="50"> 
             </a>
         </div>
         <!--**********************************
@@ -105,7 +105,7 @@
                                 <li class="nav-item d-flex align-items-center"></li>
                                 <li>
                                     <div class="dropdown header-profile2">
-                                        <a class="nav-link" href="javascript:void(0);" role="button"
+                                        <a class="nav-link" href=" " role="button"
                                             data-bs-toggle="dropdown">
                                             <div class="header-info2 d-flex align-items-center">
                                                 <img src="https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_User-Avatar-Profile-Photo-01-64.png"
@@ -121,7 +121,7 @@
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="app-profile.html" class="dropdown-item ai-icon">
+                                            <a href="/profile" class="dropdown-item ai-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-primary"
                                                     width="18" height="18" viewBox="0 0 24 24" fill="none"
                                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -130,21 +130,8 @@
                                                     <circle cx="12" cy="7" r="4"></circle>
                                                 </svg>
                                                 <span class="ms-2">Profile</span>
-                                            </a>
-                                            <a href="edit-profile.html" class="dropdown-item ai-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="text-primary"
-                                                    width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" class="feather feather-edit">
-                                                    <path
-                                                        d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7">
-                                                    </path>
-                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z">
-                                                    </path>
-                                                </svg>
-                                                <span class="ms-2">Edit Profile</span>
-                                            </a>
-                                            <a href="notification.html" class="dropdown-item ai-icon">
+                                            </a> 
+                                            <a href="/notification" class="dropdown-item ai-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                     height="24px" viewBox="0 0 24 24" version="1.1"
@@ -159,31 +146,31 @@
                                                             cy="17.5" r="2.5" />
                                                     </g>
                                                 </svg>
-                                                <span class="ms-2">Notification
-                                                </span>
+                                                <span class="ms-2">Notification</span>
                                             </a>
-                                            <a href="page-login.html" class="dropdown-item ai-icon ms-1">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="text-primary"
-                                                    width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                                    <polyline points="16 17 21 12 16 7"></polyline>
-                                                    <line x1="21" y1="12" x2="9"
-                                                        y2="12"></line>
-                                                </svg>
-                                                <span>
-                                                    <form method="POST" action="{{ route('logout') }}">
-                                                        @csrf
-                                                        <a href="route('logout')"
-                                                            onclick="event.preventDefault();
-                                                this.closest('form').submit();"
-                                                            class="ms-1">Logout
-                                                        </a>
-                                                </span>
-                                                </form>
+
+                                            <!-- Logout Form -->
+                                            <a  class="dropdown-item ai-icon">
+                                            <form method="POST" action="{{ route('logout') }}"
+                                                class="dropdown-item ai-icon p-0 m-0">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="btn w-100 d-flex align-items-center p-0 m-0 text-start">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                                        width="18" height="18" viewBox="0 0 24 24"
+                                                        fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                        <polyline points="16 17 21 12 16 7"></polyline>
+                                                        <line x1="21" y1="12" x2="9"
+                                                            y2="12"></line>
+                                                    </svg>
+                                                    <span class="ms-2">Logout</span>
+                                                </button>
+                                            </form>
                                             </a>
                                         </div>
+
                                     </div>
                                 </li>
                             </ul>
@@ -260,145 +247,8 @@
     <script src="{{ asset('js/dlabnav-init.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/demo.js') }}"></script>
-    <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+    
 
-    <script>
-        $(".my-select").selectpicker();
-
-        var swiper = new Swiper(".mySwiper-1", {
-            loop: true,
-            dots: true,
-            //nav:true,
-            autoplay: {
-                delay: 3000,
-            },
-
-            navigation: {
-                nextEl: ".swiper-button-next-1",
-                prevEl: ".swiper-button-prev-1",
-                //loop: true
-            },
-
-            pagination: {
-                el: ".swiper-pagination-banner",
-                clickable: true,
-            },
-            mousewheel: false,
-            keyboard: false,
-        });
-
-        var swiper = new Swiper(".mySwiper-2", {
-            slidesPerView: 5,
-            spaceBetween: 20,
-            loop: true,
-            autoplay: {
-                delay: 1000,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                360: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                600: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                },
-                1200: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1920: {
-                    slidesPerView: 5,
-                    spaceBetween: 20,
-                },
-            },
-        });
-
-        var swiper = new Swiper(".mySwiper-3", {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            autoplay: {
-                delay: 2000,
-            },
-
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                360: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                600: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1200: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1400: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-            },
-        });
-
-        $(function() {
-            $("[data-decrease]").on("click", decrease);
-            $("[data-increase]").click(increase);
-            $("[data-value]").change(valueChange);
-        });
-
-        function decrease() {
-            var value = $(this).parent().find("[data-value]").val();
-            if (value > 0) {
-                value--;
-                $(this).parent().find("[data-value]").val(value);
-            }
-        }
-
-        function increase() {
-            var value = $(this).parent().find("[data-value]").val();
-            if (value < 100) {
-                value++;
-                $(this).parent().find("[data-value]").val(value);
-            }
-        }
-
-        function valueChange() {
-            var value = $(this).val();
-            if (value == undefined || isNaN(value) == true || value <= 0) {
-                $(this).val(0);
-            } else if (value >= 101) {
-                $(this).val(100);
-            }
-        }
-
-        $(document).ready(function() {
-            $(".plus").click(function() {
-                $(this).toggleClass("active");
-            });
-        });
-        $(document).ready(function() {
-            $(".c-heart").click(function() {
-                $(this).toggleClass("active");
-            });
-        });
-    </script>
 </body>
 
 </html>

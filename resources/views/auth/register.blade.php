@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FoodDesk - Online Food Delivery Admin Dashboard</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <title>GoDeliver | Login</title>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png" />
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -15,56 +15,73 @@
 
 </head>
 
-<body class="vh-100">
-    <div class="authincation ">
-        <div class="container">
-            <div class="row justify-content-center h-100 align-items-center">
-                <div class="col-md-6">
-                    <div class="authincation-content">
-                        <div class="row no-gutters">
-                            <div class="col-xl-12">
-                                <div class="auth-form">
+<body class="body">
+    <div class="container mt-0">
+        <div class="row align-items-center justify-contain-center">
+            <div class="col-xl-12 mt-5">
+                <div class="card border-0">
+                    <div class="card-body login-bx">
+                        <div class="row  mt-5">
+                            <div class="col-xl-8 col-md-6 sign text-center">
+                                <div>
+                                    <img src="images/login-img/pic-5.jpg" class="food-img" alt="">
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 pe-0">
+                                <div class="sign-in-your">
                                     <div class="text-center mb-3">
-                                        <a href="/"><img src="https://lalodev.com/images/icon.png"
-                                                alt=""></a>
+                                        <img src="images/logo.png" class="mb-3" width="80">
+                                        <h4 class="fs-20 font-w800 text-black">Register to Account</h4>
+                                        <span class="dlab-sign-up">register</span>
                                     </div>
-                                    <h4 class="text-center mb-4">Sign up your account</h4>
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Name</strong></label>
-                                            <input type="text" name="name" value="{{old('name')}}" required autofocus
-                                                autocomplete="name" class="form-control" placeholder="username">
+                                            <input type="text" name="name" value="{{ old('name') }}" required
+                                                autofocus autocomplete="name" class="form-control"
+                                                placeholder="username">
+                                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="mb-1"><strong>Email</strong></label>
+                                            <label class="mb-1"><strong>User type</strong></label>
                                             <select name="usertype" class="form-control">
-                                                <option value="admin">Admin</option>
-                                                <option value="user">User</option>
+                                                <option value="user" selected>User</option>
                                                 <option value="deliver">Deliverer</option>
+                                                {{-- <option value="admin">Admin</option> --}}
                                             </select>
+                                            <x-input-error :messages="$errors->get('usertype')" class="mt-2" />
                                         </div>
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Email</strong></label>
                                             <input type="email" name="email" class="form-control"
                                                 placeholder="hello@example.com">
+                                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                         </div>
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" name="password" class="form-control" value="Password">
+                                            <input type="password" name="password" class="form-control">
+                                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" name="password" class="form-control" value="Password">
+                                            <label class="mb-1"><strong>Confirm password</strong></label>
+                                            <input type="password" name="password_confirmation" class="form-control">
+                                            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" class="btn btn-primary btn-block">Sign me up</button>
+                                            <button type="submit" name="submit" class="btn btn-primary btn-block">Register
+                                                </button>
                                         </div>
                                     </form>
-                                    <div class="new-account mt-3">
-                                        <p>Already have an account? <a class="text-primary" href="page-login.html">Sign
-                                                in</a></p>
+                                    <div class="text-center my-3">
+                                        <span class="dlab-sign-up style-1">Or also</span>
                                     </div>
+                                    <div class="text-center">
+                                        <span>Already Have An Account?<a href="{{ route('login') }}"
+                                                class="text-primary"> Login</a></span>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -73,17 +90,19 @@
             </div>
         </div>
     </div>
-
+    <!--**********************************
+        Scripts
+    ***********************************-->
     <!-- Required vendors -->
-    <script src="{{ asset('vendor/global/global.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ asset('js/dlabnav-init.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="{{ asset('js/demo.js') }}"></script>
-    <script src="{{ asset('js/styleSwitcher.js') }}"></script>
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/swiper/js/swiper-bundle.min.js"></script>
+    <script src="js/dlabnav-init.js"></script>
+    <script src="js/dlabnav-init.js"></script>
 </body>
 
+
 </html>
+
 {{-- <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
