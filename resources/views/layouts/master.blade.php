@@ -28,9 +28,14 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo text-center">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:30px; color:black; ">Go</span>&nbsp;&nbsp;&nbsp;<img src="{{asset('images/logo-mini.png')}}" width="50"> 
+            <a href="/dashboard" class="brand-logo text-center">
+                <img src="{{ asset('images/logo-mini.png') }}" width="70">
             </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
         </div>
         <!--**********************************
             Nav header end
@@ -63,7 +68,7 @@
                                                             fill="var(--primary)" />
                                                     </svg> </a></span>
                                             <input type="text" class="form-control"
-                                                placeholder="What do you want eat today" />
+                                                placeholder="What do you want to buy" />
                                         </div>
                                         <div class="search-drop">
                                             <div class="card tag-bx">
@@ -105,8 +110,7 @@
                                 <li class="nav-item d-flex align-items-center"></li>
                                 <li>
                                     <div class="dropdown header-profile2">
-                                        <a class="nav-link" href=" " role="button"
-                                            data-bs-toggle="dropdown">
+                                        <a class="nav-link" href=" " role="button" data-bs-toggle="dropdown">
                                             <div class="header-info2 d-flex align-items-center">
                                                 <img src="https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_User-Avatar-Profile-Photo-01-64.png"
                                                     alt="" />
@@ -130,7 +134,7 @@
                                                     <circle cx="12" cy="7" r="4"></circle>
                                                 </svg>
                                                 <span class="ms-2">Profile</span>
-                                            </a> 
+                                            </a>
                                             <a href="/notification" class="dropdown-item ai-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -150,24 +154,24 @@
                                             </a>
 
                                             <!-- Logout Form -->
-                                            <a  class="dropdown-item ai-icon">
-                                            <form method="POST" action="{{ route('logout') }}"
-                                                class="dropdown-item ai-icon p-0 m-0">
-                                                @csrf
-                                                <button type="submit"
-                                                    class="btn w-100 d-flex align-items-center p-0 m-0 text-start">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-primary"
-                                                        width="18" height="18" viewBox="0 0 24 24"
-                                                        fill="none" stroke="currentColor" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                                        <polyline points="16 17 21 12 16 7"></polyline>
-                                                        <line x1="21" y1="12" x2="9"
-                                                            y2="12"></line>
-                                                    </svg>
-                                                    <span class="ms-2">Logout</span>
-                                                </button>
-                                            </form>
+                                            <a class="dropdown-item ai-icon">
+                                                <form method="POST" action="{{ route('logout') }}"
+                                                    class="dropdown-item ai-icon p-0 m-0">
+                                                    @csrf
+                                                    <button type="submit"
+                                                        class="btn w-100 d-flex align-items-center p-0 m-0 text-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                                            width="18" height="18" viewBox="0 0 24 24"
+                                                            fill="none" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                                            <line x1="21" y1="12" x2="9"
+                                                                y2="12"></line>
+                                                        </svg>
+                                                        <span class="ms-2">Logout</span>
+                                                    </button>
+                                                </form>
                                             </a>
                                         </div>
 
@@ -215,8 +219,8 @@
             <div class="copyright border-top">
                 <p>
                     Copyright © Designed by
-                    <a href="https://themeforest.net/user/dexignlabs" target="_blank">DexignLab</a>
-                    2022
+                    <a target="_blank">Team 10</a>
+                    2024
                 </p>
             </div>
         </div>
@@ -247,8 +251,166 @@
     <script src="{{ asset('js/dlabnav-init.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/demo.js') }}"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '670ccdd6168c7764efc883e5' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+    <script>
+        $('.my-select').selectpicker();
 
+        var swiper = new Swiper(".mySwiper-1", {
+            loop: true,
+            dots: true,
+            //nav:true,
+            autoplay: {
+                delay: 5000,
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next-1",
+                prevEl: ".swiper-button-prev-1",
+                //loop: true
+            },
+
+            pagination: {
+                el: ".swiper-pagination-banner",
+                clickable: true,
+            },
+            mousewheel: false,
+            keyboard: false,
+        });
+
+
+        var swiper = new Swiper(".mySwiper-2", {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                360: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                600: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1920: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                },
+
+            },
+
+        });
+
+        var swiper = new Swiper(".mySwiper-3", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 5000,
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                360: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                600: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1200: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1400: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+
+
+            },
+        });
+
+
+        $(function() {
+            $('[data-decrease]').on('click', decrease);
+            $('[data-increase]').click(increase);
+            $('[data-value]').change(valueChange);
+        });
+
+        function decrease() {
+            var value = $(this).parent().find('[data-value]').val();
+            if (value > 0) {
+                value--;
+                $(this).parent().find('[data-value]').val(value);
+            }
+        }
+
+        function increase() {
+            var value = $(this).parent().find('[data-value]').val();
+            if (value < 100) {
+                value++;
+                $(this).parent().find('[data-value]').val(value);
+            }
+        }
+
+        function valueChange() {
+            var value = $(this).val();
+            if (value == undefined || isNaN(value) == true || value <= 0) {
+                $(this).val(0);
+            } else if (value >= 101) {
+                $(this).val(100);
+            }
+        }
+
+
+        $(document).ready(function() {
+            $(".plus").click(function() {
+                $(this).toggleClass("active");
+
+            });
+        });
+        $(document).ready(function() {
+            $(".c-heart").click(function() {
+                $(this).toggleClass("active");
+
+            });
+        });
+    </script>
 </body>
 
 </html>

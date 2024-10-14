@@ -24,7 +24,7 @@
                         <div class="row  mt-5">
                             <div class="col-xl-8 col-md-6 sign text-center">
                                 <div>
-                                    <img src="images/login-img/pic-5.jpg" class="food-img" alt="">
+                                    <img src="https://i.pinimg.com/564x/f1/45/3d/f1453d6cfbba57c23a996b3b6c00cfb4.jpg" class="food-img" alt="">
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-6 pe-0">
@@ -48,7 +48,7 @@
                                             <select name="usertype" class="form-control">
                                                 <option value="user" selected>User</option>
                                                 <option value="deliver">Deliverer</option>
-                                                <option value="admin">Provider</option>
+                                                <option value="provider">Provider</option>
                                             </select>
                                             <x-input-error :messages="$errors->get('usertype')" class="mt-2" />
                                         </div>
